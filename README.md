@@ -1,153 +1,123 @@
-FITTRACK — Data-Driven Gym Management & Decision Support System
+# FITTRACK — Data-Driven Gym Management & Decision Support System
+
+> **Data → Insight → Action**
 
 FITTRACK is a full-stack gym management and decision-support system that combines day-to-day gym operations with analytics, machine learning, trainer insights, and an AI Copilot.
 
-Data → Insight → Action
+---
 
-📸 Screenshots
+## 📸 Screenshots
 
-Admin Dashboard
+### Admin Dashboard
 
-
+![FITTRACK Dashboard](./screenshots/Dashboard.png)
 
 The centralized dashboard provides an overview of members, trainers, revenue, attendance, memberships, growth, and operational KPIs.
 
-Member Engagement
+### Member Engagement
 
-
+![Member Engagement](./screenshots/Memberengagement.png)
 
 Member engagement analytics combine attendance, workout completion, and fitness progress to identify engagement levels and members who may need attention.
 
-Retention Risk
+### Retention Risk
 
-
+![Retention Risk](./screenshots/Retention_risk.png)
 
 FITTRACK uses a machine-learning retention model to identify members with elevated churn risk and provide supporting reasons and recommended follow-up actions.
 
-Trainer Performance
+### Trainer Performance
 
-
+![Trainer Performance](./screenshots/Trainer_Performance.png)
 
 Trainer analytics provide attendance, workout completion, progress tracking, member ratings, composite performance, and workload information.
 
-AI Copilot
+### AI Copilot
 
-
+![AI Copilot](./screenshots/Ai_copilot.png)
 
 The AI Copilot provides role-aware answers using relevant FITTRACK business context while keeping access to sensitive information controlled.
 
-🚀 Core Features
+---
 
-Management
+## 🚀 Core Features
 
-Member management
+### Management
 
-Trainer management
+- Member management
+- Trainer management
+- Membership plans and memberships
+- Payments and revenue tracking
+- Attendance tracking
+- Workout plans and assignments
+- Classes and bookings
+- Progress tracking
+- Diet plans
+- User and admin management
 
-Membership plans and memberships
+### Intelligence & Analytics
 
-Payments and revenue tracking
-
-Attendance tracking
-
-Workout plans and assignments
-
-Classes and bookings
-
-Progress tracking
-
-Diet plans
-
-User and admin management
-
-Intelligence & Analytics
-
-Member Engagement
+#### Member Engagement
 
 FITTRACK calculates an engagement score using:
 
-Recent attendance
-
-Workout completion
-
-Fitness progress
+- Recent attendance
+- Workout completion
+- Fitness progress
 
 Members are grouped into engagement levels to help identify members who may require attention.
 
-Retention Risk Prediction
+#### Retention Risk Prediction
 
 The retention model predicts the likelihood of membership churn using historical membership behavior.
 
-Features include:
+**Features include:**
 
-Visits before prediction
+- Visits before prediction
+- Late visits
+- Payments
+- Amount paid
+- Workouts assigned
+- Workouts completed
+- Class bookings
+- Class attendance
+- Progress records
+- Workout completion rate
+- Class attendance rate
+- Late visit rate
 
-Late visits
+The final model uses a **Logistic Regression pipeline with feature scaling**.
 
-Payments
+> Retention predictions are decision-support signals, not guarantees of future member behavior.
 
-Amount paid
-
-Workouts assigned
-
-Workouts completed
-
-Class bookings
-
-Class attendance
-
-Progress records
-
-Workout completion rate
-
-Class attendance rate
-
-Late visit rate
-
-The final model uses a Logistic Regression pipeline with feature scaling.
-
-Retention predictions are decision-support signals, not guarantees of future member behavior.
-
-Trainer Analytics
+#### Trainer Analytics
 
 Trainer analytics provide:
 
-Attendance performance
+- Attendance performance
+- Workout completion
+- Member progress tracking
+- Member ratings
+- Composite performance score
+- Trainer workload classification
 
-Workout completion
-
-Member progress tracking
-
-Member ratings
-
-Composite performance score
-
-Trainer workload classification
-
-Gym Health
+#### Gym Health
 
 FITTRACK provides operational health indicators covering:
 
-Attendance
+- Attendance
+- Workout completion
+- Class attendance
+- Membership status
+- Revenue
+- Retention risk
+- Trainer workload
 
-Workout completion
-
-Class attendance
-
-Membership status
-
-Revenue
-
-Retention risk
-
-Trainer workload
-
-AI Copilot
+#### AI Copilot
 
 The AI Copilot connects natural-language questions with controlled FITTRACK business context.
 
-Its architecture is:
-
+```text
 User Question
       ↓
 Role & Page Context
@@ -159,11 +129,15 @@ Relevant Database Data
 AI Assistant
       ↓
 Actionable Response
+```
 
 The AI does not receive arbitrary SQL execution access.
 
-🏗️ System Architecture
+---
 
+## 🏗️ System Architecture
+
+```text
                          FITTRACK
                             │
              ┌──────────────┴──────────────┐
@@ -183,77 +157,41 @@ The AI does not receive arbitrary SQL execution access.
             Python / ML            AI Copilot
                  │                     │
         Scikit-learn Model       Gemini API
+```
 
-🧠 Data Science
+---
+
+## 🧠 Data Science
 
 FITTRACK extends traditional CRUD-based gym management with a data-driven decision-support layer.
 
 The system uses historical operational data to generate insights around:
 
-Member engagement
-
-Retention/churn risk
-
-Trainer performance
-
-Trainer workload
-
-Gym operational health
+- Member engagement
+- Retention/churn risk
+- Trainer performance
+- Trainer workload
+- Gym operational health
 
 The retention model was evaluated using cross-validation before the final model was selected.
 
-🛠️ Technology Stack
+---
 
-Backend
+## 🛠️ Technology Stack
 
-PHP
+| Area | Technologies |
+|---|---|
+| Backend | PHP, MySQL / MariaDB, REST-style APIs |
+| Frontend | HTML, CSS, JavaScript, Bootstrap |
+| Data Science | Python, Pandas, NumPy, Scikit-learn, Joblib |
+| AI | Google Gemini API |
+| Development | XAMPP, phpMyAdmin, Git, GitHub, Postman, Google Colab |
 
-MySQL / MariaDB
+---
 
-REST-style API endpoints
+## 📁 Project Structure
 
-Frontend
-
-HTML
-
-CSS
-
-JavaScript
-
-Bootstrap
-
-Data Science
-
-Python
-
-Pandas
-
-NumPy
-
-Scikit-learn
-
-Joblib
-
-AI
-
-Google Gemini API
-
-Development Tools
-
-XAMPP
-
-phpMyAdmin
-
-Git
-
-GitHub
-
-Postman
-
-Google Colab
-
-📁 Project Structure
-
+```text
 FITTRACK-Gym-Analytics/
 │
 ├── admin/
@@ -268,80 +206,105 @@ FITTRACK-Gym-Analytics/
 │   └── ...
 ├── database/
 ├── screenshots/
+│   ├── Dashboard.png
+│   ├── Memberengagement.png
+│   ├── Retention_risk.png
+│   ├── Trainer_Performance.png
+│   └── Ai_copilot.png
 ├── index.php
 ├── login.php
 └── README.md
+```
 
-⚙️ Local Installation
+---
 
-1. Clone the repository
+## ⚙️ Local Installation
 
+### 1. Clone the repository
+
+```bash
 git clone https://github.com/huzaifa19054/FITTRACK-Gym-Analytics.git
 cd FITTRACK-Gym-Analytics
+```
 
-2. Configure XAMPP
+### 2. Configure XAMPP
 
 Place the project inside:
 
+```text
 C:\xampp\htdocs\
+```
 
-Start Apache and MySQL.
+Start **Apache** and **MySQL**.
 
-3. Create the database
+### 3. Create the database
 
 Open phpMyAdmin and create:
 
+```text
 fittrack_gym
+```
 
-Then import the SQL database file from the project's database/ directory.
+Then import the SQL database file from the project's `database/` directory.
 
-4. Configure database credentials
+### 4. Configure database credentials
 
 Update the database configuration according to your local XAMPP/MySQL setup.
 
 Typical local configuration:
 
+```text
 Host: localhost
 User: root
 Password: empty
 Database: fittrack_gym
+```
 
-5. Open FITTRACK
+### 5. Open FITTRACK
 
+```text
 http://localhost/FitTrack-Gym-Complete/
+```
 
-🤖 AI Configuration
+---
+
+## 🤖 AI Configuration
 
 The AI Copilot requires a Gemini API key.
 
 For local development, configure the key as an environment variable rather than hard-coding it into source files.
 
+```text
 GEMINI_API_KEY=your_api_key_here
+```
 
-Do not commit real API keys to GitHub.
+**Do not commit real API keys to GitHub.**
 
-🔐 Security Notes
+---
 
-API keys should be stored outside source code.
+## 🔐 Security Notes
 
-.env files should remain untracked.
+- API keys should be stored outside source code.
+- `.env` files should remain untracked.
+- Role-based access should be enforced for AI context.
+- Sensitive database information should not be exposed to the AI model.
+- Retention predictions should be treated as decision-support outputs rather than guaranteed outcomes.
 
-Role-based access should be enforced for AI context.
+---
 
-Sensitive database information should not be exposed to the AI model.
-
-Retention predictions should be treated as decision-support outputs rather than guaranteed outcomes.
-
-📊 Data Notes
+## 📊 Data Notes
 
 FITTRACK's analytics and machine-learning features depend on the operational data available in the database.
 
 Some development/testing records may be synthetic. Production deployments should use properly collected and validated business data.
 
-🎯 Project Goal
+---
 
-FITTRACK aims to demonstrate how a traditional management system can evolve into a data-driven decision-support platform.
+## 🎯 Project Goal
 
+FITTRACK aims to demonstrate how a traditional management system can evolve into a **data-driven decision-support platform**.
+
+```text
 DATA
   ↓
 ANALYSIS
@@ -351,7 +314,11 @@ INSIGHT
 DECISION
   ↓
 ACTION
+```
 
-🔗 Repository
+---
 
-GitHub: https://github.com/huzaifa19054/FITTRACK-Gym-Analytics
+## 🔗 Repository
+
+**GitHub:**  
+https://github.com/huzaifa19054/FITTRACK-Gym-Analytics
