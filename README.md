@@ -289,7 +289,7 @@ Start Apache and MySQL.
 
 3. Create the database
 
-Open phpMyAdmin, create:
+Open phpMyAdmin and create:
 
 fittrack_gym
 
